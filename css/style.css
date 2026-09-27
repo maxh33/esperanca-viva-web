@@ -5,7 +5,7 @@
   --cor-primaria: #1b5e20;
   --cor-primaria-clara: #4c8c4a;
   /* cores secundárias */
-  --cor-secundaria: #ef6c00;
+  --cor-secundaria: #b35400; /* ajustado p/ contraste AA (4.5:1) com texto branco — original #ef6c00 falhava */
   --cor-destaque: #0d47a1;
   /* neutras */
   --cor-texto: #212121;
@@ -35,6 +35,17 @@
 
 /* Base */
 * { box-sizing: border-box; }
+/* Acessibilidade: link "pular para o conteúdo" (WCAG 2.4.1 bypass blocks) */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  padding: var(--esp-1) var(--esp-2);
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  z-index: 100;
+}
+.skip-link:focus { top: 0; }
 body {
   margin: 0;
   font-family: var(--fonte);
@@ -143,8 +154,8 @@ footer p { margin: 0; font-size: var(--fs-sm); }
   border: 1px solid var(--cor-branco);
   border-radius: 4px;
 }
-.menu a { display: block; padding: var(--esp-1); text-decoration: none; }
-.menu a:hover, .menu a:focus { background: var(--cor-primaria-clara); }
+.menu a { display: block; padding: var(--esp-1); text-decoration: none; border-bottom: 3px solid transparent; }
+.menu a:hover, .menu a:focus { border-bottom-color: var(--cor-branco); }
 .tem-submenu { position: relative; }
 .submenu {
   display: none;
@@ -190,9 +201,9 @@ button {
   cursor: pointer;
   transition: background 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
-button:hover { background: #bf5600; border-color: #bf5600; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); }
+button:hover { background: #8f4000; border-color: #8f4000; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); }
 button:focus { outline: 3px solid var(--cor-destaque); outline-offset: 2px; }
-button:active { background: #8f4000; box-shadow: none; }
+button:active { background: #6b3000; box-shadow: none; }
 button:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
 
 /* Formulário: campos e feedback de validação */
@@ -272,7 +283,7 @@ input:user-invalid, select:user-invalid { border-color: var(--cor-erro); box-sha
 .modal-caixa a.fechar { display: inline-block; margin-top: var(--esp-2); }
 
 /* SPA (atividade 3): link ativo, feedback JS de formulário, favorito, toast dinâmico */
-.menu a[aria-current="page"] { background: var(--cor-primaria-clara); font-weight: bold; }
+.menu a[aria-current="page"] { border-bottom-color: var(--cor-branco); font-weight: bold; }
 
 .campo-erro {
   display: block;

@@ -8,7 +8,9 @@ EV.events = (function () {
       toast = document.createElement("div");
       toast.id = "toast-dinamico";
       toast.className = "toast-dinamico";
-      document.body.appendChild(toast);
+      toast.setAttribute("role", "status");
+      toast.setAttribute("aria-live", "polite");
+      document.getElementById("notificacoes").appendChild(toast);
     }
     toast.textContent = mensagem;
     toast.classList.add("visivel");

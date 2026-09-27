@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
   <title>ONG Esperança Viva - SPA</title>
 </head>
 <body>
@@ -27,6 +26,8 @@
     <!-- o router.js preenche este conteúdo de acordo com a URL (#/inicio, #/projetos, #/cadastro) -->
   </main>
 
+  <div id="notificacoes" role="region" aria-label="Notificações"></div>
+
   <footer>
     <p>&copy; 2026 ONG Esperança Viva. Todos os direitos reservados.</p>
   </footer>
@@ -36,11 +37,6 @@
   <script>
     if (window.dayjs) dayjs.locale("pt-br");
   </script>
-  <script src="js/modules/storage.js"></script>
-  <script src="js/modules/templates.js"></script>
-  <script src="js/modules/forms.js"></script>
-  <script src="js/modules/events.js"></script>
-  <script src="js/modules/router.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/app.min.js"></script>
 </body>
 </html>

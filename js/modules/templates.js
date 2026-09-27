@@ -13,7 +13,7 @@ EV.templates = (function () {
       <section id="quem-somos" class="lg-8">
         <h2>Quem somos</h2>
         <p>Somos uma organização sem fins lucrativos que promove educação e inclusão digital para jovens em situação de vulnerabilidade.</p>
-        <img src="../imagens/oficina.jpg" alt="Jovens participando de uma oficina de informática" width="300" height="200">
+        <img src="imagens/oficina.jpg" alt="Jovens participando de uma oficina de informática" width="300" height="200">
       </section>
       <section id="missao" class="sm-6 lg-4">
         <h2>Missão e valores</h2>

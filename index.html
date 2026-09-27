@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>ONG Esperança Viva - SPA</title>
+</head>
+<body>
+  <header>
+    <img src="imagens/logo.png" alt="Logotipo da ONG Esperança Viva" width="80" height="80">
+    <h1>ONG Esperança Viva</h1>
+    <nav aria-label="Menu principal">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburguer">&#9776; Menu</label>
+      <ul class="menu">
+        <li><a href="#/inicio" data-rota="inicio">Início</a></li>
+        <li><a href="#/projetos" data-rota="projetos">Projetos Sociais</a></li>
+        <li><a href="#/cadastro" data-rota="cadastro">Seja voluntário ou doador</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="app" class="grade">
+    <!-- o router.js preenche este conteúdo de acordo com a URL (#/inicio, #/projetos, #/cadastro) -->
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ONG Esperança Viva. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/locale/pt-br.js"></script>
+  <script>
+    if (window.dayjs) dayjs.locale("pt-br");
+  </script>
+  <script src="js/modules/storage.js"></script>
+  <script src="js/modules/templates.js"></script>
+  <script src="js/modules/forms.js"></script>
+  <script src="js/modules/events.js"></script>
+  <script src="js/modules/router.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

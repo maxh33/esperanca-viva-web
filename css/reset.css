@@ -1,0 +1,5 @@
+/* Reset básico: zera margens/padding padrão do navegador antes do style.css */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ul, ol { list-style: none; }
+a { text-decoration: none; }
+button { font: inherit; }

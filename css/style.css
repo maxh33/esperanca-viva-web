@@ -5,13 +5,16 @@
   --cor-primaria: #1b5e20;
   --cor-primaria-clara: #4c8c4a;
   /* cores secundárias */
-  --cor-secundaria: #b35400; /* ajustado p/ contraste AA (4.5:1) com texto branco — original #ef6c00 falhava */
+  --cor-secundaria: #b35400; /* ajustado p/ contraste AA (4.5:1) com texto branco: original #ef6c00 falhava */
   --cor-destaque: #0d47a1;
   /* neutras */
   --cor-texto: #212121;
   --cor-texto-suave: #616161;
+  --cor-titulo: #1b5e20;
+  --cor-inversa: #212121;
   --cor-borda: #bdbdbd;
   --cor-fundo: #f5f5f5;
+  --cor-superficie: #ffffff;
   --cor-branco: #ffffff;
   /* feedback */
   --cor-erro: #b71c1c;
@@ -31,6 +34,20 @@
   --esp-3: 1.5rem;
   --esp-4: 2rem;
   --esp-5: 3rem;
+}
+
+/* Modo escuro: segue a preferência do sistema (prefers-color-scheme), sem JS/toggle */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --cor-fundo: #121212;
+    --cor-superficie: #1e1e1e;
+    --cor-texto: #e0e0e0;
+    --cor-texto-suave: #a0a0a0;
+    --cor-borda: #444444;
+    --cor-destaque: #64b5f6; /* azul mais claro: #0d47a1 original falha contraste em fundo escuro */
+    --cor-titulo: #81c784; /* verde mais claro pros h2: #1b5e20 original falha contraste em fundo escuro */
+  }
 }
 
 /* Base */
@@ -56,7 +73,7 @@ body {
 }
 img { max-width: 100%; height: auto; }
 h1 { font-size: var(--fs-xl); margin: 0; }
-h2 { font-size: var(--fs-lg); color: var(--cor-primaria); }
+h2 { font-size: var(--fs-lg); color: var(--cor-titulo); }
 a { color: var(--cor-destaque); }
 
 /* Grid de 12 colunas (mobile first) */
@@ -131,7 +148,7 @@ nav ul {
   justify-content: space-between;
   flex: 1;
   padding: var(--esp-2);
-  background: var(--cor-branco);
+  background: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
   border-radius: 8px;
 }
@@ -140,7 +157,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: var(--esp-3);
-  background: var(--cor-texto);
+  background: var(--cor-inversa);
   color: var(--cor-branco);
 }
 footer p { margin: 0; font-size: var(--fs-sm); }
@@ -207,7 +224,7 @@ button:active { background: #6b3000; box-shadow: none; }
 button:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
 
 /* Formulário: campos e feedback de validação */
-fieldset { margin-bottom: var(--esp-3); border: 1px solid var(--cor-borda); border-radius: 8px; background: var(--cor-branco); }
+fieldset { margin-bottom: var(--esp-3); border: 1px solid var(--cor-borda); border-radius: 8px; background: var(--cor-superficie); }
 label { display: block; margin-top: var(--esp-1); font-size: var(--fs-sm); }
 input, select {
   width: 100%;
@@ -243,7 +260,7 @@ input:user-invalid, select:user-invalid { border-color: var(--cor-erro); box-sha
   gap: var(--esp-1);
   padding: var(--esp-2);
   margin-bottom: var(--esp-2);
-  background: var(--cor-branco);
+  background: var(--cor-superficie);
   border-left: 6px solid var(--cor-borda);
   border-radius: 4px;
 }
@@ -257,7 +274,7 @@ input:user-invalid, select:user-invalid { border-color: var(--cor-erro); box-sha
   bottom: var(--esp-2);
   padding: var(--esp-2) var(--esp-3);
   color: var(--cor-branco);
-  background: var(--cor-texto);
+  background: var(--cor-inversa);
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -276,7 +293,7 @@ input:user-invalid, select:user-invalid { border-color: var(--cor-erro); box-sha
   width: 90%;
   max-width: 28rem;
   padding: var(--esp-3);
-  background: var(--cor-branco);
+  background: var(--cor-superficie);
   border-radius: 8px;
 }
 .modal-caixa h2 { margin-top: 0; }
@@ -310,7 +327,7 @@ input:user-invalid, select:user-invalid { border-color: var(--cor-erro); box-sha
 .lista-voluntarios li {
   padding: var(--esp-1) var(--esp-2);
   margin-bottom: var(--esp-1);
-  background: var(--cor-branco);
+  background: var(--cor-superficie);
   border-left: 4px solid var(--cor-primaria);
   border-radius: 4px;
 }
